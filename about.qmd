@@ -1,0 +1,14 @@
+---
+title: "About"
+---
+
+## Background
+I was born in Kenya but I moved to Malawi when I was two and lived there my whole life - so I consider Malawi home. I then moved to Vancouver in 2022 after high school to study Chemistry here at UBCV and graduated in May 2026. During my undergraduate degree, I pursued research in Quantum, Theoretical, and Computational Chemistry, creating a perfect pathway to start the MDS program.
+
+## Why Data Science?
+My previous undergraduate research heavily involved Machine Learning, building a bridge between Chemistry and Data Science. However, majority of my previous experience was self taught. I struggled quite a bit during my research due to no actual machine learning guidance (no classes or anyone to teach me). Because of this, I decided a Masters in Data Science would significantly improve my skills and open up numerous opportunities in the future. 
+
+## About me!
+Moving to Vancouver was the perfect decision for someone who has the hobbies I do. I absolutely love running; I ran the BMO Vancouver marathon and it was a beautiful route that allowed you to see the entire city. I also love hiking, which is what I am constantly doing throughout the very few months of good weather in Vancouver. 
+
+About this site

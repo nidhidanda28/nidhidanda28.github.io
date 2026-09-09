@@ -1,0 +1,6 @@
+---
+title: "My first weeks in MDS"
+author: "Nidhi Danda"
+date: 2026-09-09
+---
+![Orientation day on campus.](orientation.png)
