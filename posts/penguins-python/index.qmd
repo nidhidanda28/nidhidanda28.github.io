@@ -5,3 +5,73 @@ date: "2026-09-23"
 format: html
 jupyter: python3
 ---
+
+## Introduction
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)
+
+In this post, I will look at how body mass varies across penguin species and sex, using the 'palmerpenguins' daatset. 
+
+```{python}
+#| label: setup
+#| message: false
+#| warning: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from palmerpenguins import load_penguins
+
+penguins = load_penguins()
+```
+
+# Examining the data
+
+```{python}
+penguins = penguins.dropna()
+penguins.head()
+```
+
+# Summary statistics
+
+```{python}
+#| label: tbl-mass-summary
+#| tbl-cap: "Mean body mass (g) by species and sex."
+
+mass_summary = (
+    penguins.groupby(['species', 'sex'])['body_mass_g'].mean().reset_index()
+)
+mass_summary
+```
+
+## Visualising body mass by species
+
+```{python}
+#| label: fig-penguin-mass
+#| fig-cap: "Body mass of penguins by species" 
+
+fig, ax = plt.subplots()
+
+species_colors = {
+    "Adelie": "tab:blue",
+    "Chinstrap": "tab:orange",
+    "Gentoo": "tab:green",
+}
+
+for species, group in penguins.groupby("species"):
+    ax.scatter(
+        group["flipper_length_mm"],
+        group["body_mass_g"],
+        label=species,
+        alpha=0.7,
+        color=species_colors[species],
+    )
+
+ax.set_xlabel("Flipper length (mm)")
+ax.set_ylabel("Body mass (g)")
+ax.legend(title="Species")
+plt.show()
+```
+
+## Findings
+
+Adelie and Chinstrap have similar findings, where they have both smaller body mass and smaller flipper length. Gentoo, however, has both a large body mass and large flipper length. 
