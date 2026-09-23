@@ -1,0 +1,58 @@
+---
+title: "Penguin Bill Anatomy"
+author: "Nidhi Danda"
+date: "2026-09-23"
+format: html
+---
+
+## Introduction
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), In this post, I will look at bill length and bill depth, and how they differ between the 3 species. I will also examine if you can determine a species from its bill shape alone. 
+
+```{r}
+#| message: false
+#| warning: false
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Examining the data
+
+```{r}
+penguins |>
+    drop_na() |>
+    glimpse()
+```
+
+## Summary statistics
+
+```{r}
+#| label: tbl-bill-summary
+#| tbl-cap: "Mean bill length and depth by species."
+
+penguins |>
+    drop_na() |>
+    group_by(species) |>
+    summarise(
+        mean_bill_length = mean(bill_length_mm), 
+        mean_bill_depth = mean(bill_depth_mm),
+        n = n()
+    )
+```
+
+## Visualising bill shape by species
+```{r}
+#| label: fig-penguin-bill
+#| fig-cap: "Bill length vs bill depth, coloured by species"
+
+penguins |>
+    drop_na() |>
+    ggplot(aes(x = bill_length_mm, y = bill_depth_mm, colour = species)) + 
+    geom_point(alpha = 0.7) + 
+    labs(x = "Bill length(mm)", y = "Bill depth (mm)") + 
+    theme_minimal()
+```
+
+## Findings
+
+Adelie has shorter bill lengths but larger bill depths, whilst Gentoo has larger bill lengths and shorter bill depths. However, Chinstrap has relatively large bill depth and bill length. 

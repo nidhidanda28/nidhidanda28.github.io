@@ -1,0 +1,7 @@
+---
+title: "Penguin Body Mass Across Groups"
+author: "Nidhi Danda"
+date: "2026-09-23"
+format: html
+jupyter: python3
+---
