@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "I found orientation really informative and fun. Except from hearing about how intense the program was, I learnt a lot about networking, future events, and what is expected from this program overall. Alongside this, the ice breakers were really fun - particularly day 2. The bonding from the strange activities we were told to do around campus definitely formed a lot of friendships. I think this was extremely well planned and helped us dive into the program smoothly."
+    "text": "Penguin Bill Anatomy\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nNidhi Danda\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin Body Mass Across Groups\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nNidhi Danda\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nNidhi Danda\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog.html#orientation",
@@ -35,11 +35,95 @@
     "text": "Hi! I’m Nidhi Danda and I grew up in Malawi (lake Malawi shown above - the most beautiful place ever, I’m not biased I promise). I did my Bachelors in Chemistry here at UBC and graduated in May 2026. By pursuing my Masters in Data Science, I hope I can build my Computation and Quantum Chemistry skills that I gained during my last two years of research.\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
+    "objectID": "posts/penguins-python/index.html",
+    "href": "posts/penguins-python/index.html",
+    "title": "Penguin Body Mass Across Groups",
+    "section": "",
+    "text": "Data: Palmer Penguins\nIn this post, I will look at how body mass varies across penguin species and sex, using the ‘palmerpenguins’ daatset.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom palmerpenguins import load_penguins\n\npenguins = load_penguins()"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#introduction",
+    "href": "posts/penguins-python/index.html#introduction",
+    "title": "Penguin Body Mass Across Groups",
+    "section": "",
+    "text": "Data: Palmer Penguins\nIn this post, I will look at how body mass varies across penguin species and sex, using the ‘palmerpenguins’ daatset.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom palmerpenguins import load_penguins\n\npenguins = load_penguins()"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#visualising-body-mass-by-species",
+    "href": "posts/penguins-python/index.html#visualising-body-mass-by-species",
+    "title": "Penguin Body Mass Across Groups",
+    "section": "Visualising body mass by species",
+    "text": "Visualising body mass by species\n\nfig, ax = plt.subplots()\n\nspecies_colors = {\n    \"Adelie\": \"tab:blue\",\n    \"Chinstrap\": \"tab:orange\",\n    \"Gentoo\": \"tab:green\",\n}\n\nfor species, group in penguins.groupby(\"species\"):\n    ax.scatter(\n        group[\"flipper_length_mm\"],\n        group[\"body_mass_g\"],\n        label=species,\n        alpha=0.7,\n        color=species_colors[species],\n    )\n\nax.set_xlabel(\"Flipper length (mm)\")\nax.set_ylabel(\"Body mass (g)\")\nax.legend(title=\"Species\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Body mass of penguins by species"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#findings",
+    "href": "posts/penguins-python/index.html#findings",
+    "title": "Penguin Body Mass Across Groups",
+    "section": "Findings",
+    "text": "Findings\nAdelie and Chinstrap have similar findings, where they have both smaller body mass and smaller flipper length. Gentoo, however, has both a large body mass and large flipper length."
+  },
+  {
+    "objectID": "posts/penguins-r/index.html",
+    "href": "posts/penguins-r/index.html",
+    "title": "Penguin Bill Anatomy",
+    "section": "",
+    "text": "Data: Palmer Penguins, In this post, I will look at bill length and bill depth, and how they differ between the 3 species. I will also examine if you can determine a species from its bill shape alone.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#introduction",
+    "href": "posts/penguins-r/index.html#introduction",
+    "title": "Penguin Bill Anatomy",
+    "section": "",
+    "text": "Data: Palmer Penguins, In this post, I will look at bill length and bill depth, and how they differ between the 3 species. I will also examine if you can determine a species from its bill shape alone.\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#examining-the-data",
+    "href": "posts/penguins-r/index.html#examining-the-data",
+    "title": "Penguin Bill Anatomy",
+    "section": "Examining the data",
+    "text": "Examining the data\n\npenguins |&gt;\n    drop_na() |&gt;\n    glimpse()\n\nRows: 333\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6…\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, 19.3, 20.6, 17.8, 19.6, 17.6, 21.2…\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, 193, 190, 181, 195, 182, 191, 198, 18…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800…\n$ sex               &lt;fct&gt; male, female, female, female, male, female, male, fe…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#summary-statistics",
+    "href": "posts/penguins-r/index.html#summary-statistics",
+    "title": "Penguin Bill Anatomy",
+    "section": "Summary statistics",
+    "text": "Summary statistics\n\n\n\nTable 1: Mean bill length and depth by species.\n\n\npenguins |&gt;\n    drop_na() |&gt;\n    group_by(species) |&gt;\n    summarise(\n        mean_bill_length = mean(bill_length_mm), \n        mean_bill_depth = mean(bill_depth_mm),\n        n = n()\n    )\n\n# A tibble: 3 × 4\n  species   mean_bill_length mean_bill_depth     n\n  &lt;fct&gt;                &lt;dbl&gt;           &lt;dbl&gt; &lt;int&gt;\n1 Adelie                38.8            18.3   146\n2 Chinstrap             48.8            18.4    68\n3 Gentoo                47.6            15.0   119"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#visualising-bill-shape-by-species",
+    "href": "posts/penguins-r/index.html#visualising-bill-shape-by-species",
+    "title": "Penguin Bill Anatomy",
+    "section": "Visualising bill shape by species",
+    "text": "Visualising bill shape by species\n\npenguins |&gt;\n    drop_na() |&gt;\n    ggplot(aes(x = bill_length_mm, y = bill_depth_mm, colour = species)) + \n    geom_point(alpha = 0.7) + \n    labs(x = \"Bill length(mm)\", y = \"Bill depth (mm)\") + \n    theme_minimal()\n\n\n\n\n\n\n\nFigure 1: Bill length vs bill depth, coloured by species"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#findings",
+    "href": "posts/penguins-r/index.html#findings",
+    "title": "Penguin Bill Anatomy",
+    "section": "Findings",
+    "text": "Findings\nAdelie has shorter bill lengths but larger bill depths, whilst Gentoo has larger bill lengths and shorter bill depths. However, Chinstrap has relatively large bill depth and bill length."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
     "section": "",
     "text": "Orientation day on campus."
+  },
+  {
+    "objectID": "posts/penguins-r/about.html",
+    "href": "posts/penguins-r/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "posts/penguins-python/about.html",
+    "href": "posts/penguins-python/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   },
   {
     "objectID": "about.html",
@@ -68,5 +152,26 @@
     "title": "About",
     "section": "About me!",
     "text": "About me!\nMoving to Vancouver was the perfect decision for someone who has the hobbies I do. I absolutely love running; I ran the BMO Vancouver marathon and it was a beautiful route that allowed you to see the entire city. I also love hiking, which is what I am constantly doing throughout the very few months of good weather in Vancouver.\nAbout this site"
+  },
+  {
+    "objectID": "posts/first-weeks/index.html#orientation",
+    "href": "posts/first-weeks/index.html#orientation",
+    "title": "My first weeks in MDS",
+    "section": "Orientation",
+    "text": "Orientation\nI found orientation really informative and fun. Except from hearing about how intense the program was, I learnt a lot about networking, future events, and what is expected from this program overall. Alongside this, the ice breakers were really fun - particularly day 2. The bonding from the strange activities we were told to do around campus definitely formed a lot of friendships. I think this was extremely well planned and helped us dive into the program smoothly."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html#first-week",
+    "href": "posts/first-weeks/index.html#first-week",
+    "title": "My first weeks in MDS",
+    "section": "First Week",
+    "text": "First Week\nThe first week of classes definitely hit us hard. The workload was definitely eye opening and I’m sure it forced a lot of us to actually put our heads down and lock in. I learnt how to effectively keep track of the millions of things we have due each week by forcing myself to buy a planner for the first time in years. Although it was rough, at least we now know what to expect for the rest of the program."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html#looking-ahead",
+    "href": "posts/first-weeks/index.html#looking-ahead",
+    "title": "My first weeks in MDS",
+    "section": "Looking ahead",
+    "text": "Looking ahead\nAlthough the workload is rough, I still am looking forward to how much we will end up learning throughout this program. I am also lookign forward to my new role as the Academic Representative for Section 001, where I will get to know the students and professors more."
   }
 ]
