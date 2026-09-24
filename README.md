@@ -30,11 +30,13 @@ uv sync
 renv::restore()
 
 4. Render the site 
-(from the top level of your repostory, in your terminal)
+(from the top level of your repository, in your terminal)
 uv run quarto render
 
+## Built site location
+The built site is located the '/docs' folder. The index.html file is where the site is stored, and can be opened in a browser or through your terminal (from the top level of your repository) using:
+uv run quarto preview
 
-
-## Where the built site lands
-
-## Where the data comes from
+## About the data
+Both the R and Python sites are from the Palmer Penguins dataset through the 'palmerpenguins' package that is available for both Python and R.  
+Data: Palmer Penguins (https://allisonhorst.github.io/palmerpenguins/)
