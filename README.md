@@ -19,7 +19,7 @@ renv bootstraps itself - no seperate installation required.
 1. Clone the repository: 
 (on bash)
 git clone git@github.com:nidhidanda28/nidhidanda28.github.io.git
-cd nidhidanda28.github.io.git
+cd nidhidanda28.github.io
 
 2. Set up the Python Environment
 (on bash, from the top level of the repository in your terminal)
